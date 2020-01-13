@@ -51,7 +51,7 @@ spec:
     spec:
       containers:
         - name: demochat
-          image: r.cfcr.io/{{CF_ACCOUNT}}/samer-shami/demochat:master
+          image: samer-shami/demochat:master
           imagePullPolicy: Always
           ports:
             - containerPort: 5000
