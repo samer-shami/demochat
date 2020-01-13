@@ -1,6 +1,18 @@
 version: '1.0'
+stages:
+  - "clone"
+  - "deploy"
 steps:
+  main_clone:
+    stage: "clone"
+    title: "Cloning repo"
+    type: "git-clone"
+    description: "Cloning main repository..."
+    repo: "samer-shami/demochat"
+    git: github
+    revision: "${{CF_BRANCH}}"
   RunningDeployScript:
+    stage: "deploy"
     title: Running Deploy Script
     type: deploy
     kind: kubernetes
