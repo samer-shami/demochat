@@ -6,8 +6,6 @@ steps:
     kind: kubernetes
     cluster: uat-bgl360-eks
     namespace: demochat
-    when:
-      branch:
-        only:
-          - master
     service: demochat
+    # Path to deployment.yml location inside the image volume
+    file_path: ./eks_deployment.yml
