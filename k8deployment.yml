@@ -4,8 +4,8 @@ steps:
     title: Running Deploy Script
     type: deploy
     kind: kubernetes
-    cluster: my-cluster@FirstKubernetes
-    namespace: default
+    cluster: uat-bgl360-eks
+    namespace: demochat
     when:
       branch:
         only:
