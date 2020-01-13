@@ -60,6 +60,8 @@ spec:
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
           imagePullPolicy: Always
+      imagePullSecrets:
+        - name: codefresh-generated-r.cfcr.io-cfcr-demochat
       restartPolicy: Always
       terminationGracePeriodSeconds: 40
       dnsPolicy: ClusterFirst
