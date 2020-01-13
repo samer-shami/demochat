@@ -39,6 +39,8 @@ metadata:
   namespace: demochat
   annotations:
     deployment.kubernetes.io/revision: '1'
+    source-repository: {{CF_REPO_NAME}}
+    branch: {{CF_BRANCH_TAG_NORMALIZED}}
 spec:
   replicas: 1
   selector:
@@ -51,7 +53,8 @@ spec:
     spec:
       containers:
         - name: demochat
-          image: containers101/demochat
+          image: r.cfcr.io/{{CF_ACCOUNT}}/samer-shami/demochat:{{CF_SHORT_REVISION}}
+          imagePullPolicy: Always
           ports:
             - containerPort: 5000
               protocol: TCP
