@@ -10,7 +10,6 @@ steps:
     description: "Cloning main repository..."
     repo: "samer-shami/demochat"
     git: github
-    revision: "${{CF_BRANCH}}"
   RunningDeployScript:
     stage: "deploy"
     title: Running Deploy Script
