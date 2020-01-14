@@ -27,8 +27,7 @@ spec:
     - host: demochat.uat.bgl360.com.au
       http:
         paths:
-          - path: /
-            backend:
+          - backend:
               serviceName: demochat
               servicePort: 80
 ---
