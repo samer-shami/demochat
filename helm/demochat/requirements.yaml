@@ -1,5 +1,5 @@
 dependencies:
 - name: mongo
   version: "0.2.0"
-  repository: https://remote
+  repository: cm://h.cfcr.io/samershami-gitlab/default
 
