@@ -1,5 +1,5 @@
 dependencies:
 - name: mongo
   version: "0.2.0"
-  repository: cm://h.cfcr.io/samershami-gitlab/default
+  repository: {{ .Values.dependency_repo }}
 
