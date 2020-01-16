@@ -1,5 +1,5 @@
 dependencies:
 - name: mongo
   version: "0.2.0"
-  repository: "file://charts/"
+  repository: https://remote
 
