@@ -5,6 +5,7 @@ replicaCount: 1
 imagePullSecret: codefresh-generated-r.cfcr.io-cfcr-default
 image:
   repository: r.cfcr.io/samershami-gitlab/samer-shami/demochat
+  dependencyRepo: changeme
   tag: master
   pullPolicy: Always
 service:
