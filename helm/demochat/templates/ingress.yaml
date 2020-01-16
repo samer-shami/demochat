@@ -6,6 +6,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: {{ .Release.Name }}
+  namespace: {{ .Values.service.namespace }}
   labels:
     app: {{ .Release.Name }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
@@ -17,6 +18,10 @@ metadata:
 #    {{- range $key, $value := .Values.ingress.annotations }}
 #      {{ $key }}: {{ $value | quote }}
 #    {{- end }}
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: {{ .Values.ingress.albLocation }}
+    alb.ingress.kubernetes.io/tags: {{ .Values.ingress.albTags }}
 spec:
   rules:
     {{- range $host := .Values.ingress.hosts }}

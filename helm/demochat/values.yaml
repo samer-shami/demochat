@@ -4,16 +4,20 @@
 replicaCount: 1
 imagePullSecret: codefresh-generated-r.cfcr.io-cfcr-default
 image:
-  repository: r.cfcr.io/razielt77_github/containers101/demochat
+  repository: r.cfcr.io/samershami-gitlab/samer-shami/demochat
   tag: master
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 service:
   name: demochat
-  type: LoadBalancer
-  externalPort: 5000
+  namespace: demochat
+  type: NodePort
+  externalPort: 80
   internalPort: 5000
 ingress:
-  enabled: false
+  enabled: true
+  # possible values are `internal` or `internet-facing`
+  albLocation: internal 
+  albTags: package=Helm,testing=123
   # Used to create Ingress record (should used with service.type: ClusterIP).
   hosts:
     - minikube
