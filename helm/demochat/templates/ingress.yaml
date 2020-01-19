@@ -24,8 +24,8 @@ metadata:
     alb.ingress.kubernetes.io/tags: {{ .Values.ingress.albTags }}
 spec:
   rules:
-    {{- range .Values.ingress.hosts }}
-    - host: {{ . }}
+    {{- range $host := split "," .Values.ingress.hosts }}
+    - host: {{ $host | quote }}
       http:
         paths:
           - backend:
