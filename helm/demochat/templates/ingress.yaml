@@ -31,10 +31,10 @@ spec:
           - backend:
               serviceName: {{ $serviceName }}
               servicePort: {{ $servicePort }}
-            {{- if $path -}}
+            {{- if $path }}
             path: {{ $path }}
-            {{- end -}}
-    {{- end -}}
+            {{- end }}
+    {{- end }}
   {{- if .Values.ingress.tls }}
   tls:
 {{ toYaml .Values.ingress.tls | indent 4 }}
