@@ -19,6 +19,7 @@ ingress:
   # possible values are `internal` or `internet-facing`
   albLocation: internal 
   albTags: package=Helm,testing=123
+  path: "/"
   # Used to create Ingress record (should used with service.type: ClusterIP).
   hosts:
     - minikube
@@ -30,7 +31,6 @@ ingress:
     # - secretName: chart-example-tls
     #   hosts:
     #     - chart-example.local
-  path: "/"
 resources:
   limits:
     cpu: 100m
